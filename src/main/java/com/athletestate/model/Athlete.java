@@ -11,7 +11,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-
 @Entity
 @Table(name = "athletes")
 public class Athlete {
@@ -29,7 +28,6 @@ public class Athlete {
         this.first_Name = first_Name;
         this.last_Name = last_Name;
     }
-
     @OneToMany(mappedBy = "athleteId")
     List <Workout> workouts = new ArrayList<>();
     

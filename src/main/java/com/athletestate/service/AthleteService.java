@@ -29,6 +29,25 @@ public class AthleteService {
         athleteRepository.save(athlete);
     }
 
+    public Athlete updateAthleteById(Integer id, Athlete athleteDetails){
+
+        Athlete temp = athleteRepository.findById(id).orElseThrow(() -> new RuntimeException("no athlete found"));
+
+        temp.setFirst_Name(athleteDetails.getFirst_Name());
+
+        return athleteRepository.save(temp);
+        
+    }
+
+    public void deleteAthlete(Integer id){
+
+        Athlete temp = athleteRepository.findById(id).orElseThrow(()->new RuntimeException("no athlete found"));
+
+        athleteRepository.delete(temp);
+
+    }
+
+
 
     
 
