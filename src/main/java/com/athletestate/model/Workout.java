@@ -34,6 +34,10 @@ public class Workout {
     public Workout(){
     }
 
+    public Athlete getAthleteId() {
+        return athleteId;
+    }
+
     public int getWorkoutId() {
         return workoutId;
     }
