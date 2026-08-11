@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.athletestate.dto.AthleteCreateRequest;
 import com.athletestate.model.Athlete;
 import com.athletestate.repository.AthleteRepository;
 
@@ -25,8 +26,9 @@ public class AthleteService {
         return athleteRepository.findById(id);
     }
 
-    public void createAthlete(Athlete athlete){
-        athleteRepository.save(athlete);
+    public void createAthlete(AthleteCreateRequest dto){
+        Athlete temp = new Athlete(dto.getFirst_name(),dto.getLast_name());
+        athleteRepository.save(temp);
     }
 
     public Athlete updateAthleteById(Integer id, Athlete athleteDetails){
