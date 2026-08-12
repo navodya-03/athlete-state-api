@@ -1,26 +1,23 @@
 package com.athletestate.dto;
 
+
+import jakarta.validation.constraints.NotBlank;
+
 public class AthleteCreateRequest {
-    
+    @NotBlank(message = "can not be null")
     private String first_name;
+    @NotBlank(message = "can not be null")
     private String last_name;
-    private String email;
+    
 
     public AthleteCreateRequest(){
 
-    }
-
-    public String getEmail() {
-        return email;
     }
     public String getFirst_name() {
         return first_name;
     }
     public String getLast_name() {
         return last_name;
-    }
-    public void setEmail(String email) {
-        this.email = email;
     }
     public void setFirst_name(String first_name) {
         this.first_name = first_name;

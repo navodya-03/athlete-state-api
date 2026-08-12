@@ -11,8 +11,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.athletestate.dto.AthleteCreateRequest;
 import com.athletestate.model.Athlete;
 import com.athletestate.service.AthleteService;
+
+import jakarta.validation.Valid;
 
 
 @RestController
@@ -33,11 +36,11 @@ public class AthleteController {
 
     @PostMapping
 
-    public Athlete saveAthlete(@RequestBody Athlete athlete){
+    public Athlete saveAthlete(@Valid @RequestBody AthleteCreateRequest dto){
 
-        athleteService.createAthlete(athlete);
+        return athleteService.createAthlete(dto);
 
-        return athlete;
+        
         
         
     }

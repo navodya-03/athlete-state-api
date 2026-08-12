@@ -26,9 +26,11 @@ public class AthleteService {
         return athleteRepository.findById(id);
     }
 
-    public void createAthlete(AthleteCreateRequest dto){
+    public Athlete createAthlete(AthleteCreateRequest dto){
         Athlete temp = new Athlete(dto.getFirst_name(),dto.getLast_name());
-        athleteRepository.save(temp);
+        return athleteRepository.save(temp);
+        
+
     }
 
     public Athlete updateAthleteById(Integer id, Athlete athleteDetails){
